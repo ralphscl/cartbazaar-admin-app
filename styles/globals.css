@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+input, textarea {
+    @apply w-full mb-2 px-1 rounded-md border-2 border-gray-300;
+}
+
+input:focus, textarea:focus {
+    @apply border-accent;
+}
+
+label {
+    @apply text-accent mt-1 block;
+}
+
 .nav__links {
-    @apply flex gap-1;
+    @apply flex items-center p-2 pr-14 gap-1;
+}
+
+.nav__links.active {
+    @apply bg-white text-accent rounded-l-md;
+}
+
+.btn {
+    @apply py-1 px-8 rounded-md;
+}
+
+.btn-primary {
+    @apply bg-accent text-white;
 }
