@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react'
 import { HiBuildingStorefront, HiHome, HiCog6Tooth, HiArchiveBox, HiQueueList } from "react-icons/hi2";
 
 const Nav = () => {

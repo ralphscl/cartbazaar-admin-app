@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import Layout from '@/components/Layout';
+import { useRouter } from 'next/router';
 import axios from 'axios';
+import Layout from '@/components/Layout';
 
 const NewProduct = () => {
+  const router = useRouter();
   const [product, setProduct] = useState({
     name: '',
     category: '',
@@ -24,7 +26,18 @@ const NewProduct = () => {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     const data = product;
-    axios.post('/api/products', data)
+
+    try {
+      const response = await axios.post('/api/products', data);
+      console.log(response)
+      if(response.status === 200) {
+        console.log('success');
+        router.push('/products');
+      }
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+      // Handle error appropriately
+    }
   }
 
   return (

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Elements */
 input, textarea {
     @apply w-full mb-2 px-1 rounded-md border-2 border-gray-300;
 }
@@ -14,6 +15,23 @@ label {
     @apply text-accent mt-1 block;
 }
 
+table {
+    @apply w-full my-4;
+}
+
+table thead {
+    @apply bg-accent text-white;
+}
+
+table tr:nth-child(2) td {
+    @apply bg-gray-300;
+}
+
+table tr td {
+    @apply border p-1;
+}
+
+/* Navigation */
 .nav__links {
     @apply flex items-center p-2 pr-14 gap-1;
 }
@@ -22,8 +40,9 @@ label {
     @apply bg-white text-accent rounded-l-md;
 }
 
+/* Buttons */
 .btn {
-    @apply py-1 px-8 rounded-md;
+    @apply py-1 px-4 rounded-md;
 }
 
 .btn-primary {
